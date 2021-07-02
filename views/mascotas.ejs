@@ -1,7 +1,12 @@
 <%- include('template/cabecera', {tituloWeb:'pagina inicio'}) %>
 
 <div class="container">
-
+  <h2>CRUD Mongo</h2>
+  <a 
+  class="btn btn-success w-100"
+  href="/mascotas/crear">
+  agregar nueva mascota
+  </a>
     <table class="table">
         <thead>
           <tr>
@@ -11,6 +16,7 @@
             <th scope="col">accion</th>
           </tr>
         </thead>
+        
         <tbody>
 
             <% if (arrayMascotas.length > 0) { %>
@@ -20,11 +26,16 @@
                 <th scope="row"><%= mascota.id %> </th>
                 <td><%= mascota.nombre %></td>
                 <td><%= mascota.descripcion %></td>
-                <td>@mdo</td>
+                <td>
+                  <a 
+                    href="mascotas/<%= mascota.id %>"
+                    class="btn btn-warning btn-sm"
+                    >editar</a>
+                </td>
               </tr>
 
-     <% }) %>
-    <% } %>   
+            <% }) %>
+            <% } %>   
 
           
         </tbody>
