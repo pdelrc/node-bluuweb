@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//Create
 router.get("/crear", (req, res) => {
   res.render("crear");
 });
@@ -31,6 +32,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//Read
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
 
@@ -51,6 +53,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// delete
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
   try {
@@ -71,12 +74,13 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// update
 router.put("/:id", async (req, res) => {
   const id = req.params.id;
   const body = req.body;
 
   try {
-    const mascotasDB = await Mascota.findByIdAndUpdate(id, body, {
+    const mascotaDB = await Mascota.findByIdAndUpdate(id, body, {
       useFindAndModify: false,
     });
 

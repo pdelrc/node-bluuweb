@@ -1,8 +1,9 @@
-// espress
+// Espress
 
 const express = require("express");
 const app = express();
 
+// BODY
 // parse application/x-www-form-urlencoded
 // parse application/json
 
@@ -14,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 require("dotenv").config();
 const port = process.env.PORT || 3000;
 
-// conexion a base de datos mongoose
+// MONGOOSE: conexion a base de datos mongoose
 const mongoose = require("mongoose");
 
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.ao3ji.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;

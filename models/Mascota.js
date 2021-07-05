@@ -9,5 +9,3 @@ const mascotaSchema = new Schema({
 const Mascota = mongoose.model("Mascota", mascotaSchema);
 
 module.exports = Mascota;
-
-// dudas 09 "Mascota"
